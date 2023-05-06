@@ -3,31 +3,30 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CQRS.Core", "..\CQRS-ES\CQRS.Core\CQRS.Core.csproj", "{46970E1A-7617-4C81-97DB-B0B7A8841638}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CQRS.Core", "..\CQRS-ES\CQRS.Core\CQRS.Core.csproj", "{46970E1A-7617-4C81-97DB-B0B7A8841638}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Post.Cmd", "Post.Cmd", "{A10DA12D-EE49-4B4C-9D59-070D9ACC101F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Post.Cmd.Api", "Post.Cmd\Post.Cmd.Api\Post.Cmd.Api.csproj", "{74607EFF-AF49-47DD-8F35-5B40BC1BF42E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Post.Cmd.Api", "Post.Cmd\Post.Cmd.Api\Post.Cmd.Api.csproj", "{74607EFF-AF49-47DD-8F35-5B40BC1BF42E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Post.Cmd.Infrastructure", "Post.Cmd\Post.Cmd.Infrastructure\Post.Cmd.Infrastructure.csproj", "{D161E7C1-C6AC-479E-9E64-00662B7533D9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Post.Cmd.Infrastructure", "Post.Cmd\Post.Cmd.Infrastructure\Post.Cmd.Infrastructure.csproj", "{D161E7C1-C6AC-479E-9E64-00662B7533D9}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Post.Query", "Post.Query", "{2BF59596-B357-466F-AEC8-E4BB872C2B60}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Post.Query.Api", "Post.Query\Post.Query.Api\Post.Query.Api.csproj", "{08F3DCE0-26A6-4C8A-BF80-5E6D8298D558}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Post.Query.Api", "Post.Query\Post.Query.Api\Post.Query.Api.csproj", "{08F3DCE0-26A6-4C8A-BF80-5E6D8298D558}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Post.Query.Domain", "Post.Query\Post.Query.Domain\Post.Query.Domain.csproj", "{E906BAB0-5B31-42E1-845A-15CD6F13C3EF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Post.Query.Domain", "Post.Query\Post.Query.Domain\Post.Query.Domain.csproj", "{E906BAB0-5B31-42E1-845A-15CD6F13C3EF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Post.Query.Infrastructure", "Post.Query\Post.Query.Infrastructure\Post.Query.Infrastructure.csproj", "{69561B5D-6405-4649-AD5D-F0CDD4AE9231}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Post.Query.Infrastructure", "Post.Query\Post.Query.Infrastructure\Post.Query.Infrastructure.csproj", "{69561B5D-6405-4649-AD5D-F0CDD4AE9231}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Post.Common", "Post.Common\Post.Common.csproj", "{9DEBBB84-9BFF-4749-A4C5-13C5269DD052}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Post.Common", "Post.Common\Post.Common.csproj", "{9DEBBB84-9BFF-4749-A4C5-13C5269DD052}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Post.Cmd.Domain", "Post.Cmd\Post.Cmd.Domain\Post.Cmd.Domain.csproj", "{F6B35101-DC46-435B-BDF6-5E9FB03A791C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{46970E1A-7617-4C81-97DB-B0B7A8841638}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -58,6 +57,13 @@ Global
 		{9DEBBB84-9BFF-4749-A4C5-13C5269DD052}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9DEBBB84-9BFF-4749-A4C5-13C5269DD052}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9DEBBB84-9BFF-4749-A4C5-13C5269DD052}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F6B35101-DC46-435B-BDF6-5E9FB03A791C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F6B35101-DC46-435B-BDF6-5E9FB03A791C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F6B35101-DC46-435B-BDF6-5E9FB03A791C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F6B35101-DC46-435B-BDF6-5E9FB03A791C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{74607EFF-AF49-47DD-8F35-5B40BC1BF42E} = {A10DA12D-EE49-4B4C-9D59-070D9ACC101F}
@@ -65,5 +71,9 @@ Global
 		{08F3DCE0-26A6-4C8A-BF80-5E6D8298D558} = {2BF59596-B357-466F-AEC8-E4BB872C2B60}
 		{E906BAB0-5B31-42E1-845A-15CD6F13C3EF} = {2BF59596-B357-466F-AEC8-E4BB872C2B60}
 		{69561B5D-6405-4649-AD5D-F0CDD4AE9231} = {2BF59596-B357-466F-AEC8-E4BB872C2B60}
+		{F6B35101-DC46-435B-BDF6-5E9FB03A791C} = {A10DA12D-EE49-4B4C-9D59-070D9ACC101F}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8512B59F-63E2-47D3-8623-D414A58474DD}
 	EndGlobalSection
 EndGlobal

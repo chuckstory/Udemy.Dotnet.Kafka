@@ -5,8 +5,8 @@ namespace Post.Common.Events
 {
 	public class PostLikedEvent : BaseEvent
 	{
-        public PostLikedEvent(string type) : base(type)
-		{
+        public PostLikedEvent() : base(nameof(PostLikedEvent))
+        {
 		}
 	}
 }
