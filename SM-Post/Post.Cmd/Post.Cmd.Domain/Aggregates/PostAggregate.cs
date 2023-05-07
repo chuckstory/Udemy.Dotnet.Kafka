@@ -126,10 +126,10 @@ namespace Post.Cmd.Domain.Aggregates
                 throw new InvalidOperationException("You are not allowed to edit a comment that was made by another user!");
             }
 
-            RaiseEvent(new CommentUpdateEvent { Id = _id, CommentId = commentId, Comment = comment, Username = username, EditDate = DateTime.Now });
+            RaiseEvent(new CommentUpdatedEvent { Id = _id, CommentId = commentId, Comment = comment, Username = username, EditDate = DateTime.Now });
         }
 
-        public void Apply(CommentUpdateEvent @event)
+        public void Apply(CommentUpdatedEvent @event)
         {
             _id = @event.Id;
             _comments[@event.CommentId] = new Tuple<string, string>(@event.Comment, @event.Username);
