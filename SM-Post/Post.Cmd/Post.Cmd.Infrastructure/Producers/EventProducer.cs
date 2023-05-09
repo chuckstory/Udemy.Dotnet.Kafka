@@ -14,10 +14,12 @@ namespace Post.Cmd.Infrastructure.Producers
     public class EventProducer : IEventProducer
     {
         private readonly ProducerConfig _config;
-        private EventProducer(IOptions<ProducerConfig> config)
+
+        public EventProducer(IOptions<ProducerConfig> config)
         {
             _config = config.Value;
         }
+
         public async Task ProduceAsync<T>(string topic, T @event) where T : BaseEvent
         {
             using var producer = new ProducerBuilder<string, string>(_config)
@@ -33,9 +35,9 @@ namespace Post.Cmd.Infrastructure.Producers
 
             var deliveryResult = await producer.ProduceAsync(topic, eventMessage);
 
-            if (deliveryResult.Status != PersistenceStatus.Persisted) // if the message was not persisted
+            if (deliveryResult.Status == PersistenceStatus.NotPersisted)
             {
-                throw new Exception($"Could not produce {@event.GetType().Name} message to topic - {topic} due to the following reason: {deliveryResult.Message}");
+                throw new Exception($"Could not produce {@event.GetType().Name} message to topic - {topic} due to the following reason: {deliveryResult.Message}.");
             }
         }
     }

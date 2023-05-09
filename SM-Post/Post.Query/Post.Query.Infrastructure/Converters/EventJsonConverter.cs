@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 namespace Post.Query.Infrastructure.Converters
 {
     // This is a custom JsonConverter for BaseEvent class
-    public class EventJsonConvertor : JsonConverter<BaseEvent>
+    public class EventJsonConverter : JsonConverter<BaseEvent>
     {
         public override bool CanConvert(Type typeToConvert)
         {
