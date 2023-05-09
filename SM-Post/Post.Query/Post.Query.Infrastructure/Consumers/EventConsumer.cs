@@ -41,6 +41,7 @@ namespace Post.Query.Infrastructure.Consumers
 
                 if (consumeResult?.Message == null) continue;
 
+                Console.WriteLine($"Received message at {consumeResult.TopicPartitionOffset}: {consumeResult.Message.Value}");
                 var options = new JsonSerializerOptions { Converters = { new EventJsonConverter() } };
                 var @event = JsonSerializer.Deserialize<BaseEvent>(consumeResult.Message.Value, options);
                 var handlerMethod = _eventHandler.GetType().GetMethod("On", new Type[] { @event.GetType() });

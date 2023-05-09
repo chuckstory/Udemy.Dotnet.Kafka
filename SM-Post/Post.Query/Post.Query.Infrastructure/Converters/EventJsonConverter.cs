@@ -14,20 +14,21 @@ namespace Post.Query.Infrastructure.Converters
     // This is a custom JsonConverter for BaseEvent class
     public class EventJsonConverter : JsonConverter<BaseEvent>
     {
-        public override bool CanConvert(Type typeToConvert)
+        public override bool CanConvert(Type type)
         {
-            return typeof(BaseEvent).IsAssignableFrom(typeToConvert);
+            return type.IsAssignableFrom(typeof(BaseEvent));
         }
+
         public override BaseEvent Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
             if (!JsonDocument.TryParseValue(ref reader, out var doc))
             {
-                throw new JsonException($"Failed to parse {nameof(JsonDocument)}!");
+                throw new JsonException($"Failed to parse {nameof(JsonDocument)}");
             }
 
             if (!doc.RootElement.TryGetProperty("Type", out var type))
             {
-                throw new JsonException("Could not detect the Type descriminator property!");
+                throw new JsonException("Could not detect the Type discriminator property!");
             }
 
             var typeDiscriminator = type.GetString();
@@ -42,7 +43,7 @@ namespace Post.Query.Infrastructure.Converters
                 nameof(CommentUpdatedEvent) => JsonSerializer.Deserialize<CommentUpdatedEvent>(json, options),
                 nameof(CommentRemovedEvent) => JsonSerializer.Deserialize<CommentRemovedEvent>(json, options),
                 nameof(PostRemovedEvent) => JsonSerializer.Deserialize<PostRemovedEvent>(json, options),
-                _ => throw new JsonException($"Unknown {nameof(BaseEvent)} type: {typeDiscriminator} is not suported yet!")
+                _ => throw new JsonException($"{typeDiscriminator} is not supported yet!")
             };
         }
 
